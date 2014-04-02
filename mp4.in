@@ -1,0 +1,41 @@
+40
+int         f223(void);
+float     function_(double,int);
+function3(int,int,int);
+void f2(int x,                   int,              double   w);
+int 23F();
+char F4( int )
+test function(void);
+int float function(void);
+dobol function(int);
+int float(void);
+void integer(int float char double);
+int ____myFunction(void);
+int* f3(char[]);
+int* f5(char* st, char *st2);
+int** f(   );
+void* f(void);
+void f2(int x,                   int,              double   2w);
+int testFunction(int,int,char*);
+boolean functionTrue(int,char,int);
+int testFunction(int while,int x, char* st);
+int** test(int[] name);
+for(x=9,y=4;x>5&&y;x--){x++;y++;ten+=45;}
+for(x,y;x>5&&y;x--){x++;y++;if++;}
+for(;;);
+for(x+=2;x==5||y<5;x--, y+=3){}
+for(x=0; x<<4; x++){}
+for(;;){};
+for(;;){}
+for(x,y; x > y; x%=y);
+for(x=y; x > 3;){y++};
+for(x && y; x += 3; y && 3 + x > 3 < 3 > 3){--y;}
+for(--x;--x;--x){3 + 2 * 3 + x++;}
+for(x++ += x; x += 3 > 2 && x;x){3;};
+for(x += 3 && ||; x += 3 > 2 && x;x){3;};
+for(x && y && 3 && x + 3 * y;;){};
+for(;;){3; 4; x && y;};
+for (int, int, int; ;)
+for(;;){int x = 0;};
+for(;;){;;;;};
+for(x && y; x += 3 > 6 >= 3 <= 4 * 6 || 23; x) {3;}

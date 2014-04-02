@@ -1,0 +1,40 @@
+Uy, Dione Marcian C.
+MP4 - DFA
+
+For an in-depth glimpse of the dfa that I used, please check out DFA_Uy.xlsx.
+
+I used two DFA's for this MP. The first one, which has 13 states, is a DFA that checks for "function declarations" in C. The second one, which has 54 states, is a DFA that checks for "for loops" in C. I opted to separate the two DFA's because combining them would result to one really long table.
+
+To denote the different types of words in a line of code, I used a String Tokenizer to split the code accordingly and assigned them to Tokens with corresponding values.
+
+*Tokens:
+	0 - datatype					10 - for
+	1 - *							11 - assignment operators (=, +=, -=, *=, /=, %=)
+	2 - identifier					12 - operators (+, -, /, %)
+	3 - (							13 - comparators (<, >, >=, <=, ==)
+	4 - ,							14 - logical operators (&&, ||)
+	5 - )							15 - increment(++) / decrement (--)
+	6 - [							16 - digits
+	7 - ]							17 - {
+	8 - ;							18 - }
+	9 - undefined
+
+*Function Declaration DFA:
+	Total number of states: 13
+	Start state: q0
+	Final state/s: q11
+	Dead state: q12
+
+	Basically, this dfa starts with checking if the first word in a line of code is a data type. Then, it continues to check for the identifier. If it sees one, it checks if there is an open parenthesis. Afterwards, it checks if the next word is a data type. Next, it checks if the following word is an identifier or a comma. If it is an identifier, then it checks if the next word is a comma. If it is a comma, then it checks if the next word is a data type. If it is neither an identifier or a comma, it checks if the next word is a close parenthesis. Then, it checks if the last word is a semi-colon.
+
+	If the code deviates from this series of tests, the dfa assigns it to a dead state. In addition, this DFA also checks for a legit data type with a pointer (denoted by *) or an array (denoted by []).
+
+*For-Loop DFA:
+	Total number of states: 54
+	Start state: q0
+	Final state/s: q6, q38
+	Dead state: q48
+
+	This DFA is a bit more complicated than the function declaration DFA. First, this DFA starts with checking if the first word in a line of code is "for". Then, it continues to check for an open parenthesis. If it sees one, the DFA proceeds to the inner part of the for loop. There are three main blocks in the inner part of a for loop: (1) initialization, (2) condition, and (3) update. The C language doesn't really care if these blocks are followed, as long as the syntax is correct, then it allows the code to be compiled. Implementing this to my DFA, I used the same flow for all three blocks. The last part of the for loop, which is inside a pair of curly brace, is almost similar to the flow that I used for the three inner blocks. The only thing added is the indefinite frequency of semi-colons. In the inner blocks of the for-loop, there should only 2 semi-colons. But for the curly-brace part of the for-loop, there can be an indefinite number of semi-colons. The DFA's end states is if the code ends with a closing curly brace "{" or a semi-colon ";".
+
+	
